@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+
+<title>Pastissima! - Home page</title>
+</head>
+
+<body>
+	<header>
+		<div id="logoyham">
+			<div class="logo"><a href="index.html"><img src="immagini/logo.jpg" alt="logo de pastissima"></a>
+			</div>
+			<div class="bkgnd">
+					<a id="hamburger"  href="#"> <img src="immagini/hamburger.png" width="74px" height="74px" alt=""></a>
+			</div>
+			
+		</div>
+		
+		<nav>			
+			<ul id="apriMenu" class="hide">				
+				<li class="attuale"><a href="index.html">Home</a></li>				
+				<li><a href="pastas.html">Pasta!</a></li>				
+				<li><a href="le-nostre-filiali.html">Le nostre filiali</a></li>				
+				<li><a href="#footer">Contatti</a></li>
+			</ul>
+			
+		</nav>
+	<script>
+            document.getElementById( 'hamburger' ).addEventListener( 'click', function () {
+   
+    		document.getElementById( 'apriMenu' ).toggleClass( 'hide' );
+    
+			}, false );
+
+			Element.prototype.toggleClass = function ( className ) {
+
+    		if( this.className.split( ' ' ).indexOf( className ) == -1 ) {
+        
+        	this.className = ( this.className + ' ' + className ).trim();
+        
+    		} else {
+        
+        	this.className = this.className.replace( new RegExp( '(\\s|^)' + className + '(\\s|$)' ), ' ' ).trim();
+        
+    		};
+
+			};
+	</script>	
+	</header>
+	<div>
+		<div class="titolo home">
+
+			<h1>Pastissima!</h1>
+			<h2>la tua pasta dal 1271</h2>
+		</div>	
+
+	</div>
+	
+		
+	<div class="sezione-prodotti">
+        <a href="pastas.html#fusilli">
+			<div class="prodotti-img" id="pasta1">
+                <div class="banercito">
+					<h3>Fusilli</h3>
+				</div>
+        	</div>
+		</a>
+        
+         <a href="pastas.html#ravioli">
+			<div class="prodotti-img" id="pasta2">
+                <div class="banercito">
+					<h3>Ravioli</h3>
+				</div>
+        	</div>
+		</a>
+		
+         <a href="pastas.html#tortellini">
+			<div class="prodotti-img" id="pasta3">
+                <div class="banercito">
+					<h3>Tortellini</h3>
+				</div>
+        	</div>
+		</a>
+    </div>
+	
+	<footer id="footer">
+		<p class="contat"><b>Contattaci</b></p>
+		
+		<div class="sezione-redes">
+        <div class="redes">
+            <a href="#">
+                <img src="immagini/facebook.png" />
+            </a>
+        </div>
+        <div class="redes">
+            <a href="#">
+                <img src="immagini/instagram.png" />
+            </a>
+        </div>
+        <div class="redes">
+            <a href="#">
+                <img src="immagini/twitter.png" />
+            </a>
+        </div>
+    </div>
+		
+		<p>Pastissima!</p>
+		<p>Avenida Siempreviva 742, Springfield (USA)</p>
+		<p>P IVA 3.1415926535</p>
+		<p>090978896617 / WhatsApp: 347522004444846</p>
+	</footer>
+
+	
+
+</body>
+</html>
