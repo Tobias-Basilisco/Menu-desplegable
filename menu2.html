@@ -53,6 +53,9 @@ document.getElementById('hamburger').addEventListener('click', manage_menu);
 function manage_menu(){
     let menu = document.getElementById('apriMenu');
     let ham = document.getElementById('hamburger');
+    var container = document.querySelector(".container");
+    var documento = document.documentElement;
+
 
     if (menu.classList.contains("hide")){
     
@@ -68,6 +71,22 @@ function manage_menu(){
     else {
       ham.classList.add("hide");
     }
+
+    setTimeout(() => {
+      if(!menu.classList.contains("hide")){
+      documento.addEventListener('click', function(event) {
+
+        var esDentroDelDiv = container.contains(event.target);
+
+        if (!esDentroDelDiv) {
+          menu.classList.add("hide");
+
+        }
+      })};
+}, 1000);
+    
+    
+    
   }
 
 </script>
