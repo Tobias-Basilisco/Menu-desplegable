@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -6,9 +12,17 @@ body {
   
   .container {
     display: flex;
+    flex-direction: column;
     height: 100%;
+    width: 200px;
+    text-align: center;
+    height: 100vh;
+    background-color: #f6efae;
+
   }
   
+ 
+
   .menu,
   .submenu,
   .sub-submenu,
@@ -16,7 +30,6 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    background-color: #f6efae;
     width: 200px;
     text-align: center;
   }
@@ -77,7 +90,9 @@ body {
   
   /* fine ham */
 
-
+  #hamburger {
+    margin:  20px;
+  }
 
   @keyframes fade {
     from {
