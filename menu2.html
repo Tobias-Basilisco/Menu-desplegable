@@ -77,10 +77,12 @@ function manage_menu(){
       documento.addEventListener('click', function(event) {
 
         var esDentroDelDiv = container.contains(event.target);
+        var esDentroHam = ham.contains(event.target);
 
-        if (!esDentroDelDiv) {
+        if (!esDentroDelDiv && !esDentroHam) {
           menu.classList.add("hide");
-
+          menu.classList.remove("nav-transition");
+          ham.classList.remove("hide")
         }
       })};
 }, 1000);
