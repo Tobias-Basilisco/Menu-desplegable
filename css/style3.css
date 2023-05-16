@@ -74,7 +74,7 @@ body {
     margin-bottom: auto;
   }
 
-  .submenu-panello {
+  .submenu-panel {
     position: absolute;
     top: 0;
     left: 100%;
@@ -83,6 +83,16 @@ body {
     display: flex;
     flex-direction: column;
   }
+  .sub-submenu-panel {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100vh;
+    background-color: #a9e5f3;
+    display: flex;
+    flex-direction: column;
+  }
+
 
   .sub-submenu {
     background-color: #c2abe2;
@@ -110,9 +120,9 @@ body {
     transform: translateX(-100%);
   }
 
-  .menu-item:hover .submenu-panello,
-  .submenu-item:hover .sub-submenu-panello,
-  .sub-submenu-item:hover .sub-sub-submenu-panello {
+  .menu-item:hover .submenu-panel,
+  .submenu-item:hover .sub-submenu-panel,
+  .sub-submenu-item:hover .sub-sub-submenu-panel {
     display: flex;
     opacity: 0;
     animation: fade 0.5s forwards;
@@ -120,7 +130,23 @@ body {
     transform: translateX(-100%);
   }
   
-  
+
+  .submenu-opened {
+    display: block;
+    opacity: 0;
+    animation: fade 0.5s forwards;
+    animation-delay: 0.2s;
+    transform: translateX(-100%);
+  }
+
+  .submenu-panel-opened {
+    display: flex;
+    opacity: 0;
+    animation: fade 0.5s forwards;
+    animation-delay: 0.2s;
+    transform: translateX(-100%);
+  }
+
 
   /* ham */
   .hide {
