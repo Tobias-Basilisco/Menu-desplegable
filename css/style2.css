@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 200px;
+    width: 300px;
     text-align: center;
     height: 100vh;
     background-color: #f6efae;
@@ -32,6 +32,10 @@ body {
     margin: 0;
     width: 200px;
     text-align: center;
+  }
+
+  .menu{
+    width: 300px;
   }
   
   .menu-item {
