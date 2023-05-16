@@ -6,9 +6,9 @@
 </head>
 <body>
 
-    <div id="logoyham">
+    <div>
 			
-			<div class="bkgnd">
+			<div>
 					<a id="hamburger"  href="#"> <img src="img/hamburger.png" width="40px" height="40px" alt=""></a>
 			</div>
 			
@@ -52,7 +52,8 @@ document.getElementById('hamburger').addEventListener('click', manage_menu);
 
 function manage_menu(){
     let menu = document.getElementById('apriMenu');
-    
+    let ham = document.getElementById('hamburger');
+
     if (menu.classList.contains("hide")){
     
         menu.classList.remove("hide");}
@@ -60,7 +61,14 @@ function manage_menu(){
         menu.classList.add("hide");
     }
     
-}
+    if (menu.classList.contains("hide")){
+      ham.classList.remove("hide");}
+
+    else {
+      ham.classList.add("hide");
+    }
+  }
+
 </script>
 
 </body>
