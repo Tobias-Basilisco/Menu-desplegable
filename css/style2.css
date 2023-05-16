@@ -67,6 +67,18 @@ body {
     transform: translateX(-100%);
   }
   
+
+  /* ham */
+  .hide {
+    display: none;
+  }
+  
+  
+  
+  /* fine ham */
+
+
+
   @keyframes fade {
     from {
       opacity: 0;

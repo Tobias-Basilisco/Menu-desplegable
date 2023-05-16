@@ -5,36 +5,61 @@
   <link rel="stylesheet" type="text/css" href="css/style2.css">
 </head>
 <body>
-  <nav class="container">
-    <ul class="menu">
-      <li class="menu-item">Menu 1
-        <ul class="submenu">
-          <li class="submenu-item">Submenu 1</li>
-          <li class="submenu-item">Submenu 2</li>
-        </ul>
-      </li>
-      <li class="menu-item">Menu 2</li>
-      <li class="menu-item">Menu 3
-        <ul class="submenu">
-          <li class="submenu-item">Submenu 3</li>
-          <li class="submenu-item">Submenu 4
-            <ul class="sub-submenu">
-              <li class="sub-submenu-item">SSubmenu 1</li>
-              <li class="sub-submenu-item">SSubmenu 2</li>
-              <li class="sub-submenu-item">SSubmenu 3
-                <ul class="sub-sub-submenu">
-                  <li class="sub-sub-submenu-item">SSSubmenu 1</li>
-                  <li class="sub-sub-submenu-item">SSSubmenu 2</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    
-  </nav>
 
+    <div id="logoyham">
+			
+			<div class="bkgnd">
+					<a id="hamburger"  href="#"> <img src="img/hamburger.png" width="40px" height="40px" alt=""></a>
+			</div>
+			
+		</div>  
+  
+    <nav class="container">
+      <ul class="menu hide" id="apriMenu">
+        <li class="menu-item">Menu 1
+          <ul class="submenu">
+            <li class="submenu-item">Submenu 1</li>
+            <li class="submenu-item">Submenu 2</li>
+          </ul>
+        </li>
+        <li class="menu-item">Menu 2</li>
+        <li class="menu-item">Menu 3
+          <ul class="submenu">
+            <li class="submenu-item">Submenu 3</li>
+            <li class="submenu-item">Submenu 4
+              <ul class="sub-submenu">
+                <li class="sub-submenu-item">SSubmenu 1</li>
+                <li class="sub-submenu-item">SSubmenu 2</li>
+                <li class="sub-submenu-item">SSubmenu 3
+                  <ul class="sub-sub-submenu">
+                    <li class="sub-sub-submenu-item">SSSubmenu 1</li>
+                    <li class="sub-sub-submenu-item">SSSubmenu 2</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      
+    </nav>
+
+<script>
+
+document.getElementById('hamburger').addEventListener('click', manage_menu);
+
+function manage_menu(){
+    let menu = document.getElementById('apriMenu');
+    
+    if (menu.classList.contains("hide")){
+    
+        menu.classList.remove("hide");}
+    else {
+        menu.classList.add("hide");
+    }
+    
+}
+</script>
 
 </body>
 </html>
