@@ -65,7 +65,7 @@ body {
     display: none;
     
     background-color: transparent;
-    width: 200px;
+    width: 300px;
     justify-content: center;
     align-items: center;
     margin-top: auto;
@@ -80,11 +80,12 @@ body {
     background-color: #f3a9a9;
     display: flex;
     flex-direction: column;
+    z-index: 10;
   }
   .sub-submenu-panel {
     position: absolute;
     top: 0;
-    left:100%;
+    left:500px;
     height: 100vh;
     background-color: #a9e5f3;
     display: flex;
@@ -109,7 +110,7 @@ body {
     border-bottom: 1px solid #ccc;
   }
   
-  .menu-item:hover .submenu,
+  /* .menu-item:hover .submenu,
   .submenu-item:hover .sub-submenu,
   .sub-submenu-item:hover .sub-sub-submenu {
     display: block;
@@ -128,7 +129,7 @@ body {
     animation-delay: 0.2s;
     transform: translateX(-100%);
   }
-  
+   */
 
   .submenu-opened {
     display: block;

@@ -84,7 +84,7 @@ body {
   .sub-submenu-panel {
     position: absolute;
     top: 0;
-    left:100%;
+    left:500px;
     height: 100vh;
     background-color: #a9e5f3;
     display: flex;

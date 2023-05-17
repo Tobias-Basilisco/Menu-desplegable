@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Menú Desplegable</title>
-  <link rel="stylesheet" type="text/css" href="css/style3.css">
+  <link rel="stylesheet" type="text/css" href="css/style6.css">
 </head>
 <body>
 
@@ -18,8 +18,8 @@
       <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a>
 			</div>
       <ul class="menu" >
-        <li class="menu-item">Menu 1
-            <div class="submenu-panel">
+        <li class="menu-item" id="menu-1">Menu 1
+            <div class="submenu-panel hasSub" id="menu-1-content">
                 <ul class="submenu">
                     <li class="submenu-item">Submenu 1</li>
                     <li class="submenu-item">Submenu 2</li>
@@ -28,26 +28,12 @@
         </li>
         <li class="menu-item">Menu 2</li>
         <li class="menu-item">Menu 3
-            <div class="submenu-panel">
+            <div class="submenu-panel hasSub">
                 
-                <ul class="submenu">
+                <ul class="submenu" id="Menu 3">
                     <li class="submenu-item">Submenu 3</li>
                     <li class="submenu-item">Submenu 4
-                        <div class="sub-submenu-panel">
-                            <ul class="sub-submenu">
-                                <li class="sub-submenu-item">SSubmenu 1</li>
-                                <li class="sub-submenu-item">SSubmenu 2</li>
-                                <li class="sub-submenu-item">SSubmenu 3
-                                <div class="sub-sub-submenu-panel">
-                                    <ul class="sub-sub-submenu">
-                                        <li class="sub-sub-submenu-item">SSSubmenu 1</li>
-                                        <li class="sub-sub-submenu-item">SSSubmenu 2</li>
-                                    </ul>
-                                </div>    
-                                
-                                </li>
-                            </ul>
-                        </div>
+                        
                         
                     </li>
             
@@ -59,7 +45,8 @@
       
     </nav>
 
-<script>
+
+<script id="apri/chiudi menu">
 
 document.getElementById('hamburger').addEventListener('click', manage_menu);
 
@@ -106,5 +93,52 @@ function manage_menu(){
 
 </script>
 
+
+
+<!-- <script id="spostare sottomenu sotto">
+
+var subSubmenuPanel = document.querySelector('.sub-submenu-panel');
+document.body.appendChild(subSubmenuPanel);
+
+</script> -->
+
+
+
+<script id="mouseover menu item">
+
+
+let menu1 = document.getElementById("menu-1");
+menu1.addEventListener("mouseover", showMenuSubmenu);
+/* menu1.addEventListener("mouseout", hideMenuSubmenu);
+ */
+function showMenuSubmenu(){
+  let menu1Content = document.getElementById("menu-1-content");
+  let submenu = menu1Content.querySelector(".submenu");
+
+  menu1Content.classList.add("submenu-panel-opened");
+  submenu.classList.add("submenu-opened")
+  
+}
+
+function hideMenuSubmenu(){
+  let menu1Content = document.getElementById("menu-1-content");
+  let submenu = menu1Content.querySelector(".submenu");
+
+  menu1Content.classList.remove("submenu-panel-opened");
+  submenu.classList.remove("submenu-opened");
+
+
+}
+
+
+
+
+
+</script>
+
+
 </body>
 </html>
+
+
+

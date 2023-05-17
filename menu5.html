@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menú Desplegable</title>
+  <link rel="stylesheet" type="text/css" href="css/style5.css">
+</head>
+<body>
+
+    <div>
+			
+			<div>
+					<a id="hamburger"  href="#"> <img src="img/hamburger.png" width="40px" height="40px" alt=""></a>
+			</div>
+			
+		</div>  
+  
+    <nav class="container hide" id="apriMenu">
+      <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a>
+			</div>
+      <ul class="menu" >
+        <li class="menu-item">Menu 1
+            <div class="submenu-panel hasSub" id="">
+                <ul class="submenu">
+                    <li class="submenu-item">Submenu 1</li>
+                    <li class="submenu-item">Submenu 2</li>
+                </ul>
+            </div>
+        </li>
+        <li class="menu-item">Menu 2</li>
+        <li class="menu-item">Menu 3
+            <div class="submenu-panel hasSub">
+                
+                <ul class="submenu" id="Menu 3">
+                    <li class="submenu-item">Submenu 3</li>
+                    <li class="submenu-item">Submenu 4
+                        
+                        
+                    </li>
+            
+            
+                </ul>
+            </div>    
+        </li>
+      </ul>
+      
+    </nav>
+
+
+<script id="apri/chiudi menu">
+
+document.getElementById('hamburger').addEventListener('click', manage_menu);
+
+function manage_menu(){
+    let menu = document.getElementById('apriMenu');
+    let ham = document.getElementById('hamburger');
+    var container = document.querySelector(".container");
+    var documento = document.documentElement;
+
+
+    if (menu.classList.contains("hide")){
+    
+        menu.classList.remove("hide");
+        menu.classList.add("nav-transition")}
+    else {
+        menu.classList.add("hide");
+    }
+    
+    if (menu.classList.contains("hide")){
+      ham.classList.remove("hide");}
+
+    else {
+      ham.classList.add("hide");
+    }
+
+    setTimeout(() => {
+      if(!menu.classList.contains("hide")){
+      documento.addEventListener('click', function(event) {
+
+        var esDentroDelDiv = container.contains(event.target);
+        var esDentroHam = ham.contains(event.target);
+
+        if (!esDentroDelDiv && !esDentroHam) {
+          menu.classList.add("hide");
+          menu.classList.remove("nav-transition");
+          ham.classList.remove("hide")
+        }
+      })};
+}, 1000);
+    
+    
+    
+  }
+
+</script>
+
+<script id="asignar id">
+
+// Obtener todos los elementos con la clase "hasSub"
+var elementosHasSub = document.getElementsByClassName('hasSub');
+
+// Recorrer cada elemento "hasSub" y asignar el ID
+for (var i = 0; i < elementosHasSub.length; i++) {
+  var elemento = elementosHasSub[i];
+
+  // Obtener el elemento "li" padre
+  var padreLi = elemento.parentNode;
+
+  // Realizar una copia del elemento "li" padre
+  var copiaLi = padreLi.cloneNode(true);
+  var divDentroPadreLi = copiaLi.querySelector("hasSub")
+  // Eliminar los elementos hijos de la copia
+  while (divDentroPadreLi.firstChild) {
+    divDentroPadreLi.removeChild(divDentroPadreLi.firstChild);
+  }
+
+  // Obtener el texto del elemento "li" padre sin los elementos hijos
+  var textoLi = copiaLi.innerText.trim();
+
+  // Asignar el texto como el ID del contenedor
+  elemento.id = textoLi;
+}
+
+
+
+
+
+</script>
+
+
+<script id="spostare sottomenu sotto">
+
+var subSubmenuPanel = document.querySelector('.sub-submenu-panel');
+document.body.appendChild(subSubmenuPanel);
+
+</script>
+
+<script id="mouseover menu item">
+// Obtener todos los elementos <li> dentro de <ul> con la clase "menu-item"
+  var listaItems = document.querySelectorAll('ul.menu > li.menu-item');
+
+// Recorrer cada elemento <li>
+listaItems.forEach(function(item) {
+  // Obtener el texto del elemento <li>
+  var textoLi = item.innerText;
+  
+  // Obtener el elemento <div> correspondiente al texto del <li>
+  var divCorrespondiente = document.getElementById(textoLi);
+  
+  // Agregar el evento "mouseover" al elemento <li>
+  item.addEventListener('mouseover', function() {
+    // Agregar la clase "submenu-panel-opened" al <div> correspondiente
+    divCorrespondiente.classList.add('submenu-panel-opened');
+    
+    // Obtener el elemento <ul> dentro del <div>
+    var ulSubmenu = divCorrespondiente.querySelector('ul.submenu');
+    
+    // Agregar la clase "submenu-opened" al <ul>
+    ulSubmenu.classList.add('submenu-opened');
+  });
+  
+  // Agregar el evento "mouseout" al elemento <li>
+  item.addEventListener('mouseout', function() {
+    // Remover la clase "submenu-panel-opened" del <div> correspondiente
+    divCorrespondiente.classList.remove('submenu-panel-opened');
+    
+    // Obtener el elemento <ul> dentro del <div>
+    var ulSubmenu = divCorrespondiente.querySelector('ul.submenu');
+    
+    // Remover la clase "submenu-opened" del <ul>
+    ulSubmenu.classList.remove('submenu-opened');
+  });
+});
+
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
