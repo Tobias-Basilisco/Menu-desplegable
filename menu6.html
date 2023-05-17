@@ -104,7 +104,11 @@ function manage_menu(){
         if (!esDentroDelDiv && !esDentroHam) {
           menu.classList.add("hide");
           menu.classList.remove("nav-transition");
-          ham.classList.remove("hide")
+          ham.classList.remove("hide");
+          hideMenuSubmenu();
+          hideSubSubmenu();
+          hideSubSubSubmenu();
+
         }
       })};
 }, 1000);
@@ -140,29 +144,36 @@ nav.appendChild(subSubSubmenuPanel);
 
 let menu3 = document.getElementById("menu-3");
 menu3.addEventListener("mouseover", showMenuSubmenu);
-/* menu1.addEventListener("mouseout", hideMenuSubmenu);
- */
+
 function showMenuSubmenu(){
   let menu3Content = document.getElementById("menu-3-content");
   let submenu = menu3Content.querySelector(".submenu");
   let allSubmenus = document.querySelectorAll(".submenu");
+  let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
 
   for (var i = 0; i < allSubmenus.length; i++) {
     allSubmenus[i].classList.remove("submenu-opened");
   }
+  for (var i = 0; i < allSubmenuPanels.length; i++) {
+    allSubmenuPanels[i].classList.remove("submenu-panel-opened");
+  }
+
+
   menu3Content.classList.add("submenu-panel-opened");
   submenu.classList.add("submenu-opened")
   
 }
 
 function hideMenuSubmenu(){
-  let menu3Content = document.getElementById("menu-3-content");
-  let submenu = menu3Content.querySelector(".submenu");
+  let allSubmenus = document.querySelectorAll(".submenu");
+  let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
 
-  
-
-  menu3Content.classList.remove("submenu-panel-opened");
-  submenu.classList.remove("submenu-opened");
+  for (var i = 0; i < allSubmenus.length; i++) {
+    allSubmenus[i].classList.remove("submenu-opened");
+  }
+  for (var i = 0; i < allSubmenuPanels.length; i++) {
+    allSubmenuPanels[i].classList.remove("submenu-panel-opened");
+  }
 
 
 }
@@ -221,13 +232,15 @@ function hideMenuSubmenu(){
   }
 
   function hideSubSubmenu(){
-    let submenu9Content = document.getElementById("submenu-9-content");
-    let subSubmenu = submenu9Content.querySelector(".sub-submenu");
+    let allSubSubmenus = document.querySelectorAll(".sub-submenu");
+    let allSubSubmenuPanels = document.querySelectorAll(".sub-submenu-panel");
 
-    
-
-    submenu9Content.classList.remove("submenu-panel-opened");
-    subSubmenu.classList.remove("submenu-opened")
+    for (var i = 0; i < allSubSubmenus.length; i++) {
+      allSubSubmenus[i].classList.remove("submenu-opened");
+    }
+    for (var i = 0; i < allSubSubmenuPanels.length; i++) {
+      allSubSubmenuPanels[i].classList.remove("submenu-panel-opened");
+    }
 
   }
 </script>
@@ -253,13 +266,15 @@ function hideMenuSubmenu(){
   }
 
   function hideSubSubSubmenu(){
-    let ssubmenu3Content = document.getElementById("ssubmenu-3-content");
-    let subSubSubmenu = ssubmenu3Content.querySelector(".sub-sub-submenu");
+    let allSubSubSubmenus = document.querySelectorAll(".sub-sub-submenu");
+    let allSubSubSubmenuPanels = document.querySelectorAll(".sub-sub-submenu-panel");
 
-    
-
-    ssubmenu3Content.classList.add("submenu-panel-opened");
-    subSubSubmenu.classList.add("submenu-opened")
+    for (var i = 0; i < allSubSubSubmenus.length; i++) {
+      allSubSubSubmenus[i].classList.remove("submenu-opened");
+    }
+    for (var i = 0; i < allSubSubSubmenuPanels.length; i++) {
+      allSubSubSubmenuPanels[i].classList.remove("submenu-panel-opened");
+    }
 
   }
 </script>
