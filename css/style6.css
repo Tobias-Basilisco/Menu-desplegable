@@ -60,7 +60,9 @@ body {
   
   .submenu,
   .sub-submenu,
-  .sub-sub-submenu {
+  .sub-sub-submenu,
+  .sub-sub-sub-submenu
+   {
     
     display: none;
     
@@ -93,12 +95,20 @@ body {
     z-index: 999;
   }
 
+  .sub-sub-submenu-panel {
+    position: absolute;
+    top: 0;
+    left:300%;
+    height: 100vh;
+    background-color: #90e894;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+  }
 
   
   
-  .sub-sub-submenu {
-    background-color: #abb2e2;
-  }
+  
 
   .submenu-item,
   .sub-submenu-item,
