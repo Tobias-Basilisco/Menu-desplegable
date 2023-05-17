@@ -23,17 +23,35 @@
                 <ul class="submenu">
                     <li class="submenu-item">Submenu 1</li>
                     <li class="submenu-item">Submenu 2</li>
+                    <li class="submenu-item">Submenu 3</li>
+
                 </ul>
             </div>
         </li>
         <li class="menu-item">Menu 2</li>
-        <li class="menu-item">Menu 3
-            <div class="submenu-panel hasSub">
+        <li class="menu-item" id="menu-3">Menu 3
+            <div class="submenu-panel hasSub" id="menu-3-content">
                 
-                <ul class="submenu" id="Menu 3">
-                    <li class="submenu-item">Submenu 3</li>
-                    <li class="submenu-item">Submenu 4
-                        
+                <ul class="submenu">
+                    <li class="submenu-item">Submenu 7</li>
+                    <li class="submenu-item">Submenu 8</li>
+                    <li class="submenu-item" id="submenu-9">Submenu 9
+                      <div class="sub-submenu-panel" id="submenu-9-content">
+                        <ul class="sub-submenu">
+                            <li class="sub-submenu-item">SSubmenu 1</li>
+                            <li class="sub-submenu-item">SSubmenu 2</li>
+                            <li class="sub-submenu-item">SSubmenu 3
+                            <div class="sub-sub-submenu-panel">
+                                <ul class="sub-sub-submenu">
+                                    <li class="sub-sub-submenu-item">SSSubmenu 1</li>
+                                    <li class="sub-sub-submenu-item">SSSubmenu 2</li>
+                                    <li class="sub-sub-submenu-item">SSSubmenu 3</li>
+                                </ul>
+                            </div>    
+                            
+                            </li>
+                        </ul>
+                    </div>
                         
                     </li>
             
@@ -95,26 +113,63 @@ function manage_menu(){
 
 
 
-<!-- <script id="spostare sottomenu sotto">
+<script id="spostare sottomenu sotto">
 
 var subSubmenuPanel = document.querySelector('.sub-submenu-panel');
-document.body.appendChild(subSubmenuPanel);
+var nav = document.querySelector('nav');
+nav.appendChild(subSubmenuPanel);
 
-</script> -->
+
+</script>
 
 
 
 <script id="mouseover menu item">
 
 
-let menu1 = document.getElementById("menu-1");
-menu1.addEventListener("mouseover", showMenuSubmenu);
+let menu3 = document.getElementById("menu-3");
+menu3.addEventListener("mouseover", showMenuSubmenu);
 /* menu1.addEventListener("mouseout", hideMenuSubmenu);
  */
 function showMenuSubmenu(){
+  let menu3Content = document.getElementById("menu-3-content");
+  let submenu = menu3Content.querySelector(".submenu");
+  let allSubmenus = document.querySelectorAll(".submenu");
+
+  for (var i = 0; i < allSubmenus.length; i++) {
+    allSubmenus[i].classList.remove("submenu-opened");
+  }
+  menu3Content.classList.add("submenu-panel-opened");
+  submenu.classList.add("submenu-opened")
+  
+}
+
+function hideMenuSubmenu(){
+  let menu3Content = document.getElementById("menu-3-content");
+  let submenu = menu3Content.querySelector(".submenu");
+
+  
+
+  menu3Content.classList.remove("submenu-panel-opened");
+  submenu.classList.remove("submenu-opened");
+
+
+}
+
+
+/* secondo submenu 
+
+let menu1 = document.getElementById("menu-1");
+menu1.addEventListener("mouseover", showMenuSubmenu);
+
+function showMenuSubmenu(){
   let menu1Content = document.getElementById("menu-1-content");
   let submenu = menu1Content.querySelector(".submenu");
+  let allSubmenus = document.querySelectorAll(".submenu");
 
+  for (var i = 0; i < allSubmenus.length; i++) {
+    allSubmenus[i].classList.remove("submenu-opened");
+  }
   menu1Content.classList.add("submenu-panel-opened");
   submenu.classList.add("submenu-opened")
   
@@ -124,17 +179,49 @@ function hideMenuSubmenu(){
   let menu1Content = document.getElementById("menu-1-content");
   let submenu = menu1Content.querySelector(".submenu");
 
+  
+
   menu1Content.classList.remove("submenu-panel-opened");
   submenu.classList.remove("submenu-opened");
 
 
-}
-
-
-
+} */
 
 
 </script>
+
+<script id="mouseover submenu item">
+
+  let submenu9= document.getElementById("submenu-9");
+  submenu9.addEventListener("mouseover", showSubSubmenu);
+  /* submenu9.addEventListener("mouseout", hideSubSubmenu);
+  */
+  function showSubSubmenu(){
+    let submenu9Content = document.getElementById("submenu-9-content");
+    let subSubmenu = submenu9Content.querySelector(".sub-submenu");
+    let allSubSubmenus = document.querySelectorAll(".sub-submenu");
+
+    for (var i = 0; i < allSubSubmenus.length; i++) {
+      allSubSubmenus[i].classList.remove("submenu-opened");
+    }
+    submenu9Content.classList.add("submenu-panel-opened");
+    subSubmenu.classList.add("submenu-opened")
+    
+  }
+
+  function hideSubSubmenu(){
+    let submenu9Content = document.getElementById("submenu-9-content");
+    let subSubmenu = submenu9Content.querySelector(".sub-submenu");
+
+    
+
+    submenu9Content.classList.remove("submenu-panel-opened");
+    subSubmenu.classList.remove("submenu-opened")
+
+  }
+</script>
+
+
 
 
 </body>
