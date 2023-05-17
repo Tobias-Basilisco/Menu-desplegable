@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -24,8 +25,11 @@ body {
     width: 300px;
     text-align: center;
     height: 100vh;
-    background-color: #f6efae;
-
+    background-color: #b7b7b155;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 20px;
+    z-index: 10;
+    box-shadow: 3px 0px 8px 4px #dbd9d9f5;
   }
 
   .logo {
@@ -52,11 +56,7 @@ body {
     
   }
   
-  .menu-item {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #ccc;
-  }
+  
   
   .submenu,
   .sub-submenu,
@@ -79,20 +79,22 @@ body {
     top: 0;
     left: 100%;
     height: 100vh;
-    background-color: #f3a9a9;
+    background-color: #b7b7b18c;
     display: flex;
     flex-direction: column;
-    z-index: 10;
+    z-index: 3;
+
   }
   .sub-submenu-panel {
     position: absolute;
     top: 0;
     left:200%;
     height: 100vh;
-    background-color: #a9e5f3;
+    background-color: #b7b7b1b7;
     display: flex;
     flex-direction: column;
-    z-index: 999;
+    z-index: 2;
+
   }
 
   .sub-sub-submenu-panel {
@@ -100,24 +102,35 @@ body {
     top: 0;
     left:300%;
     height: 100vh;
-    background-color: #90e894;
+    background-color: #b7b7b1;
     display: flex;
     flex-direction: column;
-    z-index: 999;
+    z-index: 1;
+
   }
 
   
   
   
-
+  .menu-item,
   .submenu-item,
   .sub-submenu-item,
   .sub-sub-submenu-item {
-    padding: 10px;
+    padding: 16px;
     cursor: pointer;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #b9b6b1;
   }
   
+  .menu-item:hover,
+  .submenu-item:hover,
+  .sub-submenu-item:hover,
+  .sub-sub-submenu-item:hover {
+    
+    border-bottom: 1px solid #a7370b;
+    
+
+  }
+
   /* .menu-item:hover .submenu,
   .submenu-item:hover .sub-submenu,
   .sub-submenu-item:hover .sub-sub-submenu {
@@ -153,6 +166,8 @@ body {
     animation: fade 0.5s forwards;
     animation-delay: 0.2s;
     transform: translateX(-100%);
+    box-shadow: 3px 0px 8px 4px #656363f5;
+
   }
 
 
