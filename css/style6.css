@@ -29,7 +29,7 @@ body {
     font-family: 'PT Sans', sans-serif;
     font-size: 20px;
     z-index: 10;
-    box-shadow: 3px 0px 8px 4px #dbd9d9f5;
+    box-shadow: 3px 0px 8px 4px #d1cbcbf5;
   }
 
   .logo {
@@ -165,11 +165,15 @@ body {
     opacity: 0;
     animation: fade 0.5s forwards;
     animation-delay: 0.2s;
-    transform: translateX(-100%);
-    box-shadow: 3px 0px 8px 4px #656363f5;
+    box-shadow: 3px 0px 8px 4px #989494f5;
 
   }
 
+  .submenu-panel-closed {
+    
+    display: none;
+
+  }
 
   /* ham */
   .hide {
