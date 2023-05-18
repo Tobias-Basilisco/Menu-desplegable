@@ -281,7 +281,9 @@ function hideMenuSubmenu(){
     for (var i = 0; i < allSubSubSubmenus.length; i++) {
       allSubSubSubmenus[i].classList.remove("submenu-opened");
     }
+    ssubmenu3Content.classList.remove("closed");
     ssubmenu3Content.classList.add("submenu-panel-opened");
+    subSubSubmenu.classList.remove("closed");
     subSubSubmenu.classList.add("submenu-opened")
     
   }
@@ -291,11 +293,16 @@ function hideMenuSubmenu(){
     let allSubSubSubmenuPanels = document.querySelectorAll(".sub-sub-submenu-panel");
 
     for (var i = 0; i < allSubSubSubmenus.length; i++) {
+      allSubSubSubmenus[i].classList.add("closed");
+    setTimeout(() => {
       allSubSubSubmenus[i].classList.remove("submenu-opened");
+    },500);
     }
     for (var i = 0; i < allSubSubSubmenuPanels.length; i++) {
-      allSubSubSubmenuPanels[i].classList.remove("submenu-panel-opened");
-    }
+      allSubSubSubmenuPanels[i].classList.add("closed");
+    setTimeout(() => {
+      allSubSubSubmenuPanels[i].classList.remove("submenu-opened");
+    },500);    }
 
   }
 </script>
