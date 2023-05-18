@@ -21,16 +21,7 @@
       <div class="logo"><a href="#"><img src="img/logo.jpg" alt="logo"></a>
 			</div>
       <ul class="menu" >
-        <li class="menu-item" id="menu-1">Menu 1
-            <div class="submenu-panel hasSub" id="menu-1-content">
-                <ul class="submenu">
-                    <li class="submenu-item">Submenu 1</li>
-                    <li class="submenu-item">Submenu 2</li>
-                    <li class="submenu-item">Submenu 3</li>
-
-                </ul>
-            </div>
-        </li>
+        <li class="menu-item">Menu 1</li>
         <li class="menu-item">Menu 2</li>
         <li class="menu-item" id="menu-3">Menu 3
             <div class="submenu-panel hasSub" id="menu-3-content">
@@ -180,13 +171,17 @@ function hideMenuSubmenu(){
   for (var i = 0; i < allSubmenus.length; i++) {
     allSubmenus[i].classList.add("closed");
     setTimeout(() => {
-      allSubmenus[i].classList.remove("submenu-opened");
+      if (allSubmenus[i].classList.contains("submenu-opened")){
+        allSubmenus[i].classList.remove("submenu-opened");
+      }
     },500);
   }
   for (var i = 0; i < allSubmenuPanels.length; i++) {
     allSubmenuPanels[i].classList.add("closed");
     setTimeout(() => {
-      allSubmenuPanels[i].classList.remove("submenu-opened");
+      if (allSubmenuPanels[i].classList.contains("submenu-panel-opened")){
+        allSubmenuPanels[i].classList.remove("submenu-panel-opened");
+      }
     },500);  }
 
 

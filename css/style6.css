@@ -185,7 +185,7 @@ body {
   /* fine ham */
 
   .closed {
-    animation: fadeOut 0.5s forwards;
+    animation: fadeOut 1s forwards;
 
   }
 
