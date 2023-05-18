@@ -92,18 +92,22 @@ function hideMenuSubmenu(){
   for (var i = 0; i < allSubmenus.length; i++) {
     allSubmenus[i].classList.add("closed");
     setTimeout(() => {
-      if (allSubmenus[i].classList.contains("submenu-opened")){
+      allSubmenus = document.querySelectorAll(".submenu");
+      for (var i = 0; i < allSubmenus.length; i++) {
         allSubmenus[i].classList.remove("submenu-opened");
       }
     },500);
   }
-  for (var i = 0; i < allSubmenuPanels.length; i++) {
+
+  for (var i = 0; i < allSubmenus.length; i++) {
     allSubmenuPanels[i].classList.add("closed");
     setTimeout(() => {
-      if (allSubmenuPanels[i].classList.contains("submenu-panel-opened")){
+      allSubmenuPanels = document.querySelectorAll(".submenu-panel");
+      for (var i = 0; i < allSubmenuPanels.length; i++) {
         allSubmenuPanels[i].classList.remove("submenu-panel-opened");
       }
-    },500);  }
+    },500);
+  }
 
 }
 
