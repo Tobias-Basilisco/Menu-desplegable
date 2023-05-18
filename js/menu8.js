@@ -3,14 +3,15 @@ let evento='click';
 
 if (window.innerWidth >= 1000) {
   moveDivsToEndOfNav();
-  evento='mouseover';
+
+   //MOUSEOVER VS CLICK
+    evento='mouseover';
 }
 else {
   evento='click';
 }
 
-  //MOUSEOVER VS CLICK
-
+ 
 
 
 // APRI/CHIUDI MENU
