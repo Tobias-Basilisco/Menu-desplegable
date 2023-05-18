@@ -105,9 +105,12 @@ function manage_menu(){
         var esDentroHam = ham.contains(event.target);
 
         if (!esDentroDelDiv && !esDentroHam) {
-          menu.classList.add("hide");
           menu.classList.remove("nav-transition");
+          setTimeout(() => {
+          menu.classList.add("hide");
           ham.classList.remove("hide");
+          },500);
+          menu.classList.add("closed");
           hideMenuSubmenu();
           hideSubSubmenu();
           hideSubSubSubmenu();
