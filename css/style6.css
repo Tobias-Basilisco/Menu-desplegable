@@ -186,7 +186,6 @@ body {
 
   .closed {
     animation: fadeOut 0.5s forwards;
-    animation-delay: 0.2s;
 
   }
 
