@@ -81,11 +81,16 @@ function moveDivsToEndOfNav(){
 
 // MOUSEOVER/CICK MENU ITEM
 
-let zonamenu3 = document.querySelector(".frecce-zone-a");
+let zonamenu3 = document.querySelector("#menu-3-arrow");
 let menu3 = document.getElementById("menu-3");
 
-menu3.addEventListener(evento, showMenuSubmenu);
-zonamenu3.addEventListener(evento, showMenuSubmenu);
+if (window.innerWidth >= 1000) {
+  menu3.addEventListener(evento, showMenuSubmenu);
+}
+
+else {
+  zonamenu3.addEventListener(evento, showMenuSubmenu);  
+}
 
 function showMenuSubmenu(){
   let menu3Content = document.getElementById("menu-3-content");
