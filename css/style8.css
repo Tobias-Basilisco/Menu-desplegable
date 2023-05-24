@@ -252,7 +252,7 @@
       z-index: 1;
       position: relative;
       left: 0;
-      top:22px;
+      top:16px;
     }
 
     .menu-item,
@@ -265,6 +265,10 @@
 
     /* li {
       display: list-item;
+    } */
+
+    /* .submenu-panel-opened {
+      box-shadow: none;
     } */
 
   }
