@@ -89,7 +89,8 @@ if (window.innerWidth >= 1000) {
 }
 
 else {
-  zonamenu3.addEventListener(evento, showMenuSubmenu);  
+  zonamenu3.addEventListener(evento, showMenuSubmenu);
+    
 }
 
 function showMenuSubmenu(){
@@ -237,4 +238,20 @@ function hideSubSubSubmenu(){
 }
 
 
+//GIRARE LA FRECCIA
 
+function rotateArrowIn(){
+  let zonamenu3 = document.querySelector("#menu-3-arrow");
+  let arrow = zonamenu3.querySelector("img");
+
+  arrow.classList.remove(".frecce-closed");
+  arrow.classList.add(".frecce-opened");
+}
+
+function rotateArrowOut(){
+  let zonamenu3 = document.querySelector("#menu-3-arrow");
+  let arrow = zonamenu3.querySelector("img");
+
+  arrow.classList.remove(".frecce-opened");
+  arrow.classList.add(".frecce-closed");
+}
