@@ -290,6 +290,7 @@
     } */
     .frecce-zone-a {
       display: block;
+      cursor: pointer;
       height: 60px;
       width: 80px;
       background-color:aqua;
