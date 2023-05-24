@@ -34,7 +34,13 @@
     margin: 40px;
   }
   
-  
+  .frecce{
+    display: none;
+  }
+
+  .frecce-zone-a {
+    display: none;
+  }
  
 
   .menu,
@@ -49,8 +55,6 @@
 
   .menu{
     width: 300px;
-
-    
   }
   
   
@@ -268,6 +272,15 @@
 
     }
 
+    .frecce {
+      display: block;
+      height: 16px;
+      position: absolute;
+      top: 22px;
+      right: 10px;
+      z-index: 20;
+    }
+
     /* li {
       display: list-item;
     } */
@@ -275,7 +288,15 @@
     /* .submenu-panel-opened {
       box-shadow: none;
     } */
-
+    .frecce-zone-a {
+      display: block;
+      height: 60px;
+      width: 80px;
+      background-color:aqua;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
   
