@@ -230,10 +230,7 @@
   @media (max-width: 1000px){
     .submenu,
     .sub-submenu,
-    .sub-sub-submenu,
-    .sub-sub-sub-submenu{
-      
-      
+    .sub-sub-submenu{
       background-color: transparent;
       width: 100%;
       justify-content: center;
@@ -242,8 +239,11 @@
       margin-bottom: auto;
     }
 
-    .submenu-panel {
-      height: 100%;
+    .submenu-panel,
+    .sub-submenu-panel,
+    .sub-sub-submenu-panel
+     {
+      height: 110%;
       width: 100%;
       background-color: #b7b7b18c;
       opacity: 1;
@@ -261,6 +261,11 @@
       position: relative;
       display: flex;
       flex-direction: column;
+    }
+
+    .sub-sub-submenu-panel {
+      background-color: #b7b7b1;
+
     }
 
     /* li {
