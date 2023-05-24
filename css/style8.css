@@ -38,6 +38,15 @@
     display: none;
   }
 
+  .frecce-closed{
+    animation: rotateClosed 0.5s forwards;
+  }
+
+  .frecce-opened{
+    animation: rotateOpened 0.5s forwards;
+  }
+
+
   .frecce-zone-a {
     display: none;
   }
@@ -229,6 +238,24 @@
     }
     to {
       opacity: 1;
+    }
+  }
+
+  @keyframes rotateClosed {
+    from {
+      rotate: 90deg;
+    }
+    to {
+      rotate: 0;
+    }
+  }
+  
+  @keyframes rotateOpened {
+    from {
+      rotate: 0;
+    }
+    to {
+      rotate: 90deg;
     }
   }
   @media (max-width: 1000px){
