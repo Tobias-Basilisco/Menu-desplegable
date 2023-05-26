@@ -38,6 +38,8 @@
     display: none;
   }
 
+  
+
   .frecce-closed{
     animation: rotateClosed 0.5s forwards;
   }

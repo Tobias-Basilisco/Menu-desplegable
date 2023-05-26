@@ -113,28 +113,24 @@ function showMenuSubmenu(){
   submenu.classList.remove("closed");
   submenu.classList.add("submenu-opened");
 
-  // versione mobile 
-  /* if (window.innerWidth < 1000){
-    if (menu3Content.classList.contains("submenu-panel-opened")){
+  if (menu3Content.classList.contains("submenu-panel-opened")){
     
-      submenu.classList.add("closed");
-      setTimeout(() => {
-        let menu3Content = document.getElementById("menu-3-content");
-        let submenu = menu3Content.querySelector(".submenu");   
-        submenu.classList.remove("submenu-opened");
-        }
-      ,500);
-      
-      menu3Content.classList.add("closed");
-      setTimeout(() => {
-        let menu3Content = document.getElementById("menu-3-content");
-        menu3Content.classList.remove("submenu-panel-opened");
-        }
-      ,500);
-  
-    }
+    submenu.classList.add("closed");
+    setTimeout(() => {
+      let menu3Content = document.getElementById("menu-3-content");
+      let submenu = menu3Content.querySelector(".submenu");   
+      submenu.classList.remove("submenu-opened");
+      }
+    ,500);
+    
+    menu3Content.classList.add("closed");
+    setTimeout(() => {
+      let menu3Content = document.getElementById("menu-3-content");
+      menu3Content.classList.remove("submenu-panel-opened");
+      }
+    ,500);
+
   }
-   */
 
     
 
