@@ -200,10 +200,13 @@
     animation: fadeOut 1s forwards;
 
   }
+  .nav-closed {
+    animation: fadeOutNav 1s forwards;
+  }
 
 .nav-transition{
   opacity: 0;
-  animation: fade 0.5s forwards;
+  animation: fadeNav 0.5s forwards;
   animation-delay: 0.2s;
 }
 
@@ -224,6 +227,27 @@
     }
   }
   @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes fadeNav {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes fadeOutNav {
     from {
       opacity: 1;
       transform: translateX(0);
@@ -327,6 +351,29 @@
       top: 0;
       right: 0;
     }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+    }
+
+
   }
 
   

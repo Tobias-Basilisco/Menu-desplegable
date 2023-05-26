@@ -54,7 +54,7 @@ function manage_menu(){
           menu.classList.add("hide");
           ham.classList.remove("hide");
           },500);
-          menu.classList.add("closed");
+          menu.classList.add("nav-closed");
           hideMenuSubmenu();
           hideSubSubmenu();
           hideSubSubSubmenu();
