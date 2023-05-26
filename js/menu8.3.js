@@ -97,8 +97,8 @@ else {
 function showMenuSubmenu(){
   let menu3Content = document.getElementById("menu-3-content");
   let submenu = menu3Content.querySelector(".submenu");
-  let allSubmenus = document.querySelectorAll(".submenu");
-  let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
+  let allSubmenus = document.querySelectorAll(".submenu")-submenu;
+  let allSubmenuPanels = document.querySelectorAll(".submenu-panel")-menu3Content;
 
   
 
@@ -142,16 +142,30 @@ function showMenuSubmenu(){
    
   }
   
-  /* for (var i = 0; i < allSubmenus.length; i++) {
-    allSubmenus[i].classList.remove("submenu-opened");
+  for (var i = 0; i < allSubmenus.length; i++) {
+    allSubmenus[i].classList.add("closed");
+    setTimeout(() => {
+      let allSubmenus = document.querySelectorAll(".submenu")-submenu;
+      allSubmenus[i].classList.remove("submenu-opened");
+      }
+    ,500);
   }
+
+
   for (var i = 0; i < allSubmenuPanels.length; i++) {
-    allSubmenuPanels[i].classList.remove("submenu-panel-opened");
-  } */
+
+    allSubmenuPanels[i].classList.add("closed");
+    setTimeout(() => {
+      let allSubmenuPanels = document.querySelectorAll(".submenu-panel")-menu3Content;
+      allSubmenuPanels[i].classList.remove("submenu-panel-opened");
+      }
+    ,500);
+  }   
+}
 
     
 
-}
+
 
   
 
