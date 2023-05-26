@@ -100,37 +100,54 @@ function showMenuSubmenu(){
   let allSubmenus = document.querySelectorAll(".submenu");
   let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
 
-  for (var i = 0; i < allSubmenus.length; i++) {
-    allSubmenus[i].classList.remove("submenu-opened");
-  }
-  for (var i = 0; i < allSubmenuPanels.length; i++) {
-    allSubmenuPanels[i].classList.remove("submenu-panel-opened");
-  }
+  
 
+  if (window.innerWidth >= 1000){
 
   menu3Content.classList.remove("closed");
   menu3Content.classList.add("submenu-panel-opened");
   submenu.classList.remove("closed");
   submenu.classList.add("submenu-opened");
 
-  if (menu3Content.classList.contains("submenu-panel-opened")){
-    
-    submenu.classList.add("closed");
-    setTimeout(() => {
-      let menu3Content = document.getElementById("menu-3-content");
-      let submenu = menu3Content.querySelector(".submenu");   
-      submenu.classList.remove("submenu-opened");
-      }
-    ,500);
-    
-    menu3Content.classList.add("closed");
-    setTimeout(() => {
-      let menu3Content = document.getElementById("menu-3-content");
-      menu3Content.classList.remove("submenu-panel-opened");
-      }
-    ,500);
-
   }
+
+  // versione mobile 
+  if (window.innerWidth < 1000){
+    if (!menu3Content.classList.contains("submenu-panel-opened") && !submenu.classList.contains("submenu-opened")){
+      menu3Content.classList.remove("closed");
+      menu3Content.classList.add("submenu-panel-opened");
+      submenu.classList.remove("closed");
+      submenu.classList.add("submenu-opened");
+    }
+
+    else {
+    
+      submenu.classList.add("closed");
+      setTimeout(() => {
+        let menu3Content = document.getElementById("menu-3-content");
+        let submenu = menu3Content.querySelector(".submenu");   
+        submenu.classList.remove("submenu-opened");
+        }
+      ,500);
+      
+      menu3Content.classList.add("closed");
+      setTimeout(() => {
+        let menu3Content = document.getElementById("menu-3-content");
+        menu3Content.classList.remove("submenu-panel-opened");
+        }
+      ,500);
+  
+    }
+
+   
+  }
+  
+  /* for (var i = 0; i < allSubmenus.length; i++) {
+    allSubmenus[i].classList.remove("submenu-opened");
+  }
+  for (var i = 0; i < allSubmenuPanels.length; i++) {
+    allSubmenuPanels[i].classList.remove("submenu-panel-opened");
+  } */
 
     
 
