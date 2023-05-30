@@ -9,6 +9,7 @@ if (window.innerWidth >= 1000) {
 }
 else {
   evento='click';
+
 }
 rotateArrow();
 
@@ -297,33 +298,33 @@ function hideSubSubSubmenu(){
 
 
 function rotateArrow(){
-  let zonamenu3 = document.querySelector("#menu-3-arrow");
+  let zonamenu3 = document.getElementById("menu-3-arrow");
   zonamenu3 = addEventListener("click", girare);
 
   function girare(){
 
-  zonamenu3 = document.querySelector("#menu-3-arrow");  
+  zonamenu3 = document.getElementById("menu-3-arrow");  
   let arrowThis = zonamenu3.querySelector(".frecce");
-  let arrowAll = document.querySelectorAll(".frecce");
-  
+  let arrowAll = document.querySelectorAll(".frecce")-arrowThis;
+  /* alert(arrowAll[0].classList);
 
   for (var i = 0; i < arrowAll.length; i++){
 
-    if (arrowAll[i].classList.contains(".frecce-opened")){
+    if (arrowAll[i].classList.contains("frecce-opened")){
 
-      arrowAll[i].classList.remove(".frecce-opened");
-      arrowAll[i].classList.add(".frecce-closed");
+      arrowAll[i].classList.remove("frecce-opened");
+      arrowAll[i].classList.add("frecce-closed");
     }
-  }
+  } */
   
-  if (arrowThis.classList.contains(".frecce-closed")){
-    arrowThis.classList.remove(".frecce-closed");
-    arrowThis.classList.add(".frecce-opened");
+  if (arrowThis.classList.contains("frecce-closed")){
+    arrowThis.classList.remove("frecce-closed");
+    arrowThis.classList.add("frecce-opened");
     }
 
-  else if (arrowThis.classList.contains(".frecce-opened")){
-    arrowThis.classList.remove(".frecce-opened");
-    arrowThis.classList.add(".frecce-closed");
+  else if (arrowThis.classList.contains("frecce-opened")){
+    arrowThis.classList.remove("frecce-opened");
+    arrowThis.classList.add("frecce-closed");
   }
   
 }
