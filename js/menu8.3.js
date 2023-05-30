@@ -12,8 +12,9 @@ else {
 
 }
 rotateArrow();
-
- 
+resetArrows();
+/* vinculateArrows();
+ */ 
 
 
 // APRI/CHIUDI MENU
@@ -30,9 +31,12 @@ function manage_menu(){
     if (menu.classList.contains("hide")){
     
         menu.classList.remove("hide");
-        menu.classList.add("nav-transition")}
+        menu.classList.add("nav-transition");
+        resetArrows();
+      }
     else {
         menu.classList.add("hide");
+        resetArrows();
     }
     
     if (menu.classList.contains("hide")){
@@ -59,6 +63,7 @@ function manage_menu(){
           hideMenuSubmenu();
           hideSubSubmenu();
           hideSubSubSubmenu();
+          resetArrows();
 
         }
       })};
@@ -300,14 +305,15 @@ function hideSubSubSubmenu(){
 function rotateArrow(){
   let zonamenu3 = document.getElementById("menu-3-arrow");
   zonamenu3 = addEventListener("click", girare);
+}
 
-  function girare(){
+function girare(){
 
   zonamenu3 = document.getElementById("menu-3-arrow");  
   let arrowThis = zonamenu3.querySelector(".frecce");
-  let arrowAll = document.querySelectorAll(".frecce")-arrowThis;
-  /* alert(arrowAll[0].classList);
-
+  let arrowAll = document.querySelectorAll(".frecce") - arrowThis;
+/*   alert(arrowAll[1].classList);
+ */
   for (var i = 0; i < arrowAll.length; i++){
 
     if (arrowAll[i].classList.contains("frecce-opened")){
@@ -315,7 +321,7 @@ function rotateArrow(){
       arrowAll[i].classList.remove("frecce-opened");
       arrowAll[i].classList.add("frecce-closed");
     }
-  } */
+  }  
   
   if (arrowThis.classList.contains("frecce-closed")){
     arrowThis.classList.remove("frecce-closed");
@@ -327,5 +333,40 @@ function rotateArrow(){
     arrowThis.classList.add("frecce-closed");
   }
   
+}
+
+function resetArrows(){
+
+  let arrowAll = document.querySelectorAll(".frecce");
+/*   alert(arrowAll[0].classList)
+ */  for (var i = 0; i < arrowAll.length; i++){  
+    if (arrowAll[i].classList.contains("frecce-opened")){
+      arrowAll[i].classList.remove("frecce-opened");
+      arrowAll[i].classList.add("frecce-closed");
+    }
+} 
+
+
+}
+
+
+function vinculateArrows(){
+  let arrowAll = document.querySelectorAll(".frecce");
+  var liElement = arrowAll.closest('li');
+
+
+
+  for (var i = 0; i < arrowAll.length; i++){
+
+    if (arrowAll[i].classList.contains("frecce-opened")){
+      arrowAll[i].classList.remove("frecce-opened");
+      arrowAll[i].classList.add("frecce-closed");
+    }
+
+    if (liElement.innertext.contains("submenu-panel-opened")){
+      arrowAll[i].classList.remove("frecce-closed");
+      arrowAll[i].classList.add("frecce-opened");
+  }
+
 }
 }

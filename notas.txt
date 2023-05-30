@@ -3,3 +3,6 @@ hacer flecha submenu versione mobile
 cambiar animacion para version MOBILE
 
 version horizontal
+
+
+chequear ultima funcion, hacer un for para recorrer los frecce antes de asignarle el closest li
