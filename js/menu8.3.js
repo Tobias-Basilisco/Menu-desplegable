@@ -7,9 +7,9 @@ if (window.innerWidth >= 1000) {
    //MOUSEOVER VS CLICK
     evento='mouseover';
 }
+
 else {
   evento='click';
-
 }
 // rotateArrow();
 // resetArrows();
@@ -88,16 +88,15 @@ function moveDivsToEndOfNav(){
 
 // MOUSEOVER/CICK MENU ITEM
 
-let zonamenu3 = document.querySelector("#menu-3-arrow");
 let menu3 = document.getElementById("menu-3");
+let zonamenu3 = document.querySelector("#menu-3-arrow");
 
 if (window.innerWidth >= 1000) {
   menu3.addEventListener(evento, showMenuSubmenu);
 }
 
 else {
-  zonamenu3.addEventListener(evento, showMenuSubmenu);
-    
+  zonamenu3.addEventListener(evento, showMenuSubmenu);    
 }
 
 function showMenuSubmenu(){
@@ -195,7 +194,7 @@ function hideMenuSubmenu(){
       for (var i = 0; i < allSubmenus.length; i++) {
         allSubmenus[i].classList.remove("submenu-opened");
       }
-    },200);
+    },500);
   }
 
   for (var i = 0; i < allSubmenuPanels.length; i++) {
@@ -205,17 +204,21 @@ function hideMenuSubmenu(){
       for (var i = 0; i < allSubmenuPanels.length; i++) {
         allSubmenuPanels[i].classList.remove("submenu-panel-opened");
       }
-    },200);
+    },500);
   }
 
 }
 
 //MOUSE OVER SUBMENU ITEM
 
-let submenu9= document.getElementById("submenu-9");
+let submenu9 = document.getElementById("submenu-9");
+let zonaSubmenu9 = document.querySelector("#submenu-9-arrow");
+
+
+
 submenu9.addEventListener(evento, showSubSubmenu);
-/* submenu9.addEventListener("mouseout", hideSubSubmenu);
-*/
+
+
 function showSubSubmenu(){
     let submenu9Content = document.getElementById("submenu-9-content");
     let subSubmenu = submenu9Content.querySelector(".sub-submenu");

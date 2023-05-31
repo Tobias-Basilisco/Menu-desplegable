@@ -1,6 +1,6 @@
 hacer flecha submenu versione mobile
 
-cambiar animacion para version MOBILE
+funciones para hacer el js mas optimo
 
 version horizontal
 
