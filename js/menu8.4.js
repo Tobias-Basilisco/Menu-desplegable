@@ -390,7 +390,7 @@ function vinculateArrows(){
 
     }
   }
-,501);
+,201);
 }
 
 
