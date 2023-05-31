@@ -11,10 +11,10 @@ else {
   evento='click';
 
 }
-rotateArrow();
-resetArrows();
-/* vinculateArrows();
- */ 
+// rotateArrow();
+// resetArrows();
+vinculateArrows();
+ 
 
 
 // APRI/CHIUDI MENU
@@ -32,11 +32,11 @@ function manage_menu(){
     
         menu.classList.remove("hide");
         menu.classList.add("nav-transition");
-        resetArrows();
+        vinculateArrows();
       }
     else {
         menu.classList.add("hide");
-        resetArrows();
+        vinculateArrows();
     }
     
     if (menu.classList.contains("hide")){
@@ -63,7 +63,7 @@ function manage_menu(){
           hideMenuSubmenu();
           hideSubSubmenu();
           hideSubSubSubmenu();
-          resetArrows();
+          vinculateArrows();
 
         }
       })};
@@ -119,6 +119,9 @@ function showMenuSubmenu(){
 
   // versione mobile 
   if (window.innerWidth < 1000){
+
+    vinculateArrows();
+
     if (!menu3Content.classList.contains("submenu-panel-opened") && !submenu.classList.contains("submenu-opened")){
       menu3Content.classList.remove("closed");
       menu3Content.classList.add("submenu-panel-opened");
@@ -144,7 +147,7 @@ function showMenuSubmenu(){
       ,500);
   
     }
-
+    vinculateArrows();
    
   }
   
@@ -155,6 +158,7 @@ function showMenuSubmenu(){
       allSubmenus[i].classList.remove("submenu-opened");
       }
     ,500);
+    vinculateArrows();
   }
 
 
@@ -166,6 +170,12 @@ function showMenuSubmenu(){
       allSubmenuPanels[i].classList.remove("submenu-panel-opened");
       }
     ,500);
+    setTimeout(() => {
+
+    vinculateArrows();
+    }
+    ,800);
+
   }   
 }
 
@@ -351,9 +361,17 @@ function resetArrows(){
 
 
 function vinculateArrows(){
+  // alert("arrow")
   let arrowAll = document.querySelectorAll(".frecce");
-  var liElement = arrowAll.closest('li');
+  var liElement = [];
+  // alert(liElement[0].classList);
 
+
+  for (var i = 0; i < arrowAll.length; i++){
+    liElement[i] = arrowAll[i].closest('li');
+    
+  }
+  // alert(liElement[0].classList);
 
 
   for (var i = 0; i < arrowAll.length; i++){
@@ -363,10 +381,12 @@ function vinculateArrows(){
       arrowAll[i].classList.add("frecce-closed");
     }
 
-    if (liElement.innertext.contains("submenu-panel-opened")){
+    if (liElement[i].innerHTML.includes("submenu-panel-opened")){
       arrowAll[i].classList.remove("frecce-closed");
       arrowAll[i].classList.add("frecce-opened");
   }
 
 }
 }
+
+
