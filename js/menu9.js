@@ -475,7 +475,7 @@ function vinculateArrows(){
         arrowAll[i].classList.add("frecce-closed");
       }
 
-      if (liElement[i].innerHTML.includes("submenu-panel-opened")){
+      if (liElement[i].getElementsByTagName("div")[1].classList.contains("submenu-panel-opened")){
         arrowAll[i].classList.remove("frecce-closed");
         arrowAll[i].classList.add("frecce-opened");
       }
