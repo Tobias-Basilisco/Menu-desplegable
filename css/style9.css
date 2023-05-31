@@ -137,32 +137,17 @@
   .submenu-item:hover,
   .sub-submenu-item:hover,
   .sub-sub-submenu-item:hover {
-    
+
     border-bottom: 1px solid #a7370b;
-    
-
   }
 
-  /* .menu-item:hover .submenu,
-  .submenu-item:hover .sub-submenu,
-  .sub-submenu-item:hover .sub-sub-submenu {
-    display: block;
-    opacity: 0;
-    animation: fade 0.5s forwards;
-    animation-delay: 0.2s;
-    transform: translateX(-100%);
-  }
+  .menu-item.no-hover:hover,
+  .submenu-item.no-hover:hover,
+  .sub-submenu-item.no-hover:hover,
+  .sub-sub-submenu-item.no-hover:hover{
 
-  .menu-item:hover .submenu-panel,
-  .submenu-item:hover .sub-submenu-panel,
-  .sub-submenu-item:hover .sub-sub-submenu-panel {
-    display: flex;
-    opacity: 0;
-    animation: fade 0.5s forwards;
-    animation-delay: 0.2s;
-    transform: translateX(-100%);
+    border-bottom: initial;
   }
-   */
 
   .submenu-opened {
     /* height: 0; */
@@ -356,7 +341,7 @@
       cursor: pointer;
       height: 60px;
       width: 80px;
-      background-color:aqua;
+      /* background-color:aqua; */
       position: absolute;
       top: 0;
       right: 0;

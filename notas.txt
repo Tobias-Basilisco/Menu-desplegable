@@ -1,4 +1,3 @@
-hacer flecha submenu versione mobile
 
 funciones para hacer el js mas optimo
 

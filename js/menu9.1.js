@@ -551,13 +551,28 @@ function vinculateArrows(){
       }
 
       if (liElement[i].getElementsByTagName("div")[1].classList.contains("submenu-panel-opened")){
+        
         arrowAll[i].classList.remove("frecce-closed");
         arrowAll[i].classList.add("frecce-opened");
+        liElement[i].classList.add("no-hover");
+      }
+
+      else {
+        liElement[i].classList.remove("no-hover");
+
       }
 
     }
   }
 ,501);
+
+//SENZA HOVER SE è APERTO IL SOTTOMENU
+
+
 }
+
+
+
+
 
 
