@@ -362,7 +362,7 @@ function showSubSubSubmenu(){
   
   let ssubmenu3Content = document.getElementById("ssubmenu-3-content");
   let subSubSubmenu = ssubmenu3Content.querySelector(".sub-sub-submenu");
-  let allSubSubmenus = document.querySelectorAll(".sub-submenu")-subSubSubmenu;
+  let allSubSubSubmenus = document.querySelectorAll(".sub-submenu")-subSubSubmenu;
   let allSubSubSubmenuPanels = document.querySelectorAll(".sub-sub-submenu-panel")-ssubmenu3Content;
   
   if (window.innerWidth >= 1000){
