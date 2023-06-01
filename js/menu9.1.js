@@ -554,6 +554,7 @@ function vinculateArrows(){
         
         arrowAll[i].classList.remove("frecce-closed");
         arrowAll[i].classList.add("frecce-opened");
+        //SENZA HOVER SE è APERTO IL SOTTOMENU
         liElement[i].classList.add("no-hover");
       }
 
@@ -566,13 +567,21 @@ function vinculateArrows(){
   }
 ,501);
 
-//SENZA HOVER SE è APERTO IL SOTTOMENU
 
 
 }
 
 
 
+// QUANTITA DI SPOSTAMENTO DEGLI ELEMENTI SOTTO IL SOTTOMENU APERTO DA MOBILE
 
+function asignMarginBotToAnimation(){
+
+  var alturaPanel = "-180px";
+  document.documentElement.style.setProperty('--altura-panel', alturaPanel);
+
+}
+
+asignMarginBotToAnimation();
 
 
