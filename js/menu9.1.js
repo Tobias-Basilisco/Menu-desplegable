@@ -126,7 +126,7 @@ function showMenuSubmenu(){
       menu3Content.classList.remove("closed");
       menu3Content.classList.add("submenu-panel-opened");
       
-      asignMarginBotToAnimation();
+      asignMarginBotToAnimation(menu3Content);
 
       submenu.classList.remove("closed");
       submenu.classList.add("submenu-opened");
@@ -257,7 +257,7 @@ function showSubSubmenu(){
       submenu9Content.classList.remove("closed");
       submenu9Content.classList.add("submenu-panel-opened");
 
-      asignMarginBotToAnimation();
+      asignMarginBotToAnimation(submenu9Content);
 
       subSubmenu.classList.remove("closed");
       subSubmenu.classList.add("submenu-opened");
@@ -359,18 +359,7 @@ else {
 }
 
 function showSubSubSubmenu(){
-  /* let ssubmenu3Content = document.getElementById("ssubmenu-3-content");
-  let subSubSubmenu = ssubmenu3Content.querySelector(".sub-sub-submenu");
-  let allSubSubSubmenus = document.querySelectorAll(".sub-sub-submenu");
-
-  for (var i = 0; i < allSubSubSubmenus.length; i++) {
-    allSubSubSubmenus[i].classList.remove("submenu-opened");
-  }
-  ssubmenu3Content.classList.remove("closed");
-  ssubmenu3Content.classList.add("submenu-panel-opened");
-  subSubSubmenu.classList.remove("closed");
-  subSubSubmenu.classList.add("submenu-opened")
-   */
+  
   let ssubmenu3Content = document.getElementById("ssubmenu-3-content");
   let subSubSubmenu = ssubmenu3Content.querySelector(".sub-sub-submenu");
   let allSubSubmenus = document.querySelectorAll(".sub-submenu")-subSubSubmenu;
@@ -394,7 +383,7 @@ function showSubSubSubmenu(){
       ssubmenu3Content.classList.remove("closed");
       ssubmenu3Content.classList.add("submenu-panel-opened");
 
-      asignMarginBotToAnimation();
+      asignMarginBotToAnimation(ssubmenu3Content);
 
       subSubSubmenu.classList.remove("closed");
       subSubSubmenu.classList.add("submenu-opened");
@@ -584,11 +573,14 @@ function vinculateArrows(){
 
 // QUANTITA DI SPOSTAMENTO DEGLI ELEMENTI SOTTO IL SOTTOMENU APERTO DA MOBILE
 
-function asignMarginBotToAnimation(){
+function asignMarginBotToAnimation(content){
 
   setTimeout(() => {
 
-    let submenuPanelOpened = document.querySelector(".submenu-panel-opened");
+    // let submenuPanelOpened = document.querySelector(".submenu-panel-opened");
+    let submenuPanelOpened = content;
+
+
     // let alturaPanel = 180;
     let alturaPanel = submenuPanelOpened.offsetHeight;
     // alert(-alturaPanel + "px");
