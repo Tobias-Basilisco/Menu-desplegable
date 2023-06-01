@@ -1,0 +1,55 @@
+<div class="menu">
+    <div class="menu-item">Elemento 1</div>
+    <div class="menu-item parent">Elemento 2
+      <div class="submenu">
+        <div class="submenu-item">Subelemento 1</div>
+        <div class="submenu-item">Subelemento 2</div>
+        <div class="submenu-item">Subelemento 3</div>
+      </div>
+    </div>
+    <div class="menu-item">Elemento 3</div>
+    <div class="menu-item">Elemento 4</div>
+  </div>
+
+<style>
+    .menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  transition: margin-top 0.3s;
+}
+
+.submenu {
+  display: none;
+  padding-left: 20px;
+}
+
+.submenu-item {
+  padding: 5px;
+}
+
+.parent.open .submenu {
+  display: block;
+}
+
+.parent.open + .menu-item {
+  margin-top: 60px;
+}
+
+</style>
+
+<script>
+    const parentItems = document.querySelectorAll('.parent');
+
+parentItems.forEach(item => {
+  item.addEventListener('click', () => {
+    item.classList.toggle('open');
+  });
+});
+
+</script>
