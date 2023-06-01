@@ -302,7 +302,14 @@
       animation-delay: 0s;
     }
 
+    .submenu {
+      background-color: #b7b7b18c;
+
+    }
+
     .submenu-panel-opened{
+      margin-bottom: 0;
+
       animation-delay: 0s;
       animation: fade 0.5s forwards, marginIn 0.5s forwards;
       margin-bottom: 0;
@@ -311,7 +318,8 @@
     }
 
     .closed {
-      animation: fadeOut 1s forwards, marginOut 1s forwards;
+      margin-bottom: 0;
+      animation: marginOut 0.5s forwards;
       /* animation-delay: 1s; */
       /* animation: marginCorrection 2s forwards; */
 
@@ -410,15 +418,23 @@
 
     @keyframes marginOut {
       0% {
-        margin-bottom: 0;
+        /* margin-bottom: 0; */
+        transform: scaleY(100%);
+        opacity: 1;
+
       }
       
-      50%{
+/*       10%{
         margin-bottom: -180px;
+        
       }
+ */
 
       100% {
-        margin-bottom: 0;
+        /* margin-bottom: 0; */
+        transform: scaleY(0%);
+        opacity: 0;
+
       }
 
 
