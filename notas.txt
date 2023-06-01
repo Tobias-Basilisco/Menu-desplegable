@@ -3,5 +3,5 @@ funciones para hacer el js mas optimo
 
 version horizontal
 
-display fit content
 
+enricopruni.it
