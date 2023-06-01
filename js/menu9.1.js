@@ -125,6 +125,9 @@ function showMenuSubmenu(){
     if (!menu3Content.classList.contains("submenu-panel-opened") && !submenu.classList.contains("submenu-opened")){
       menu3Content.classList.remove("closed");
       menu3Content.classList.add("submenu-panel-opened");
+      
+      asignMarginBotToAnimation();
+
       submenu.classList.remove("closed");
       submenu.classList.add("submenu-opened");
     }
@@ -253,6 +256,9 @@ function showSubSubmenu(){
     if (!submenu9Content.classList.contains("submenu-panel-opened") && !subSubmenu.classList.contains("submenu-opened")){
       submenu9Content.classList.remove("closed");
       submenu9Content.classList.add("submenu-panel-opened");
+
+      asignMarginBotToAnimation();
+
       subSubmenu.classList.remove("closed");
       subSubmenu.classList.add("submenu-opened");
     }
@@ -387,6 +393,9 @@ function showSubSubSubmenu(){
     if (!ssubmenu3Content.classList.contains("submenu-panel-opened") && !subSubSubmenu.classList.contains("submenu-opened")){
       ssubmenu3Content.classList.remove("closed");
       ssubmenu3Content.classList.add("submenu-panel-opened");
+
+      asignMarginBotToAnimation();
+
       subSubSubmenu.classList.remove("closed");
       subSubSubmenu.classList.add("submenu-opened");
     }
@@ -577,11 +586,17 @@ function vinculateArrows(){
 
 function asignMarginBotToAnimation(){
 
-  var alturaPanel = "-180px";
-  document.documentElement.style.setProperty('--altura-panel', alturaPanel);
+  setTimeout(() => {
 
+    let submenuPanelOpened = document.querySelector(".submenu-panel-opened");
+    // let alturaPanel = 180;
+    let alturaPanel = submenuPanelOpened.offsetHeight;
+    // alert(-alturaPanel + "px");
+    document.documentElement.style.setProperty('--altura-panel', -alturaPanel + "px");
+  }
+  ,10)
 }
 
-asignMarginBotToAnimation();
+
 
 
