@@ -87,29 +87,60 @@ function moveDivsToEndOfNav(){
 }
 
 // MOUSEOVER/CICK MENU ITEM
-arrows("menu3","#menu-3-arrow");
+arrows("menu-3","#menu-3-arrow");
 
 function arrows(idLi, idZonaDiv){
 
 let LiThatsHas = document.getElementById(idLi);
+alert(LiThatsHas);
 let zonaArrow = document.querySelector(idZonaDiv);
 
 if (window.innerWidth >= 1000) {
-  LiThatsHas.addEventListener(evento, showSubmenu("menu-3-content",".submenu","submenu-panel"));
+  // alert(evento);
+  LiThatsHas.addEventListener(evento, function(event){
+    showSubmenu("menu-3-content",".submenu",".submenu-panel")
+  });
+
+
 }
 
 else {
-  zonaArrow.addEventListener(evento, showSubmenu("menu-3-content",".submenu","submenu-panel"));    
+  zonaArrow.addEventListener(evento, function(event){
+    showSubmenu("menu-3-content",".submenu",".submenu-panel")
+  });   
 }
 
 }
 
 function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel){
 
+  alert("showSubmenu");
   let ContentDivPanel = document.getElementById(idContentDivPanel);
+  // alert(ContentDivPanel);
   let submenu = ContentDivPanel.querySelector(classQuerySubmenu);
-  let allSubmenus = document.querySelectorAll(classQuerySubmenu)-submenu;
-  let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel)-ContentDivPanel;
+  // alert(submenu);
+  let allSubmenus = document.querySelectorAll(classQuerySubmenu);
+  let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
+  let allSubmenusButThis = [];
+  let allSubmenuPanelsButThis = [];
+
+
+  for (let i = 0; i < allSubmenus.length; i++) {
+    if (allSubmenus[i] !== submenu) {
+      allSubmenusButThis.push(allSubmenus[i]);
+    }
+  }
+
+  for (let i = 0; i < allSubmenuPanels.length; i++) {
+    if (allSubmenuPanels[i] !== ContentDivPanel) {
+      allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
+    }
+  }
+
+
+
+
+  
 
 
   /* let menu3Content = document.getElementById("menu-3-content");
@@ -121,6 +152,7 @@ function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
 
   if (window.innerWidth >= 1000){
 
+  alert("full");
   ContentDivPanel.classList.remove("closed");
   ContentDivPanel.classList.add("submenu-panel-opened");
   submenu.classList.remove("closed");
@@ -148,7 +180,7 @@ function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
       submenu.classList.add("closed");
       setTimeout(() => {
         let ContentDivPanel = document.getElementById(idContentDivPanel);
-        let submenu = ContentDivPanel.getElementById(idSubmenu);
+        let submenu = ContentDivPanel.querySelector(classQuerySubmenu);
         submenu.classList.remove("submenu-opened");
         }
       ,500);
@@ -165,26 +197,60 @@ function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
    
   }
   
-  for (var i = 0; i < allSubmenus.length; i++) {
-    allSubmenus[i].classList.add("closed");
+  for (var i = 0; i < allSubmenusButThis.length; i++) {
+    allSubmenusButThis[i].classList.add("closed");
     setTimeout(() => {
       let ContentDivPanel = document.getElementById(idContentDivPanel);
       let submenu = ContentDivPanel.getElementById(idSubmenu);
-      let allSubmenus = document.querySelectorAll(classQuerySubmenu)-submenu;
-      allSubmenus[i].classList.remove("submenu-opened");
+      let allSubmenus = document.querySelectorAll(classQuerySubmenu);
+      let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
+      let allSubmenusButThis = [];
+      let allSubmenuPanelsButThis = [];
+    
+    
+      for (let i = 0; i < allSubmenus.length; i++) {
+        if (allSubmenus[i] !== submenu) {
+          allSubmenusButThis.push(allSubmenus[i]);
+        }
+      }
+    
+      for (let i = 0; i < allSubmenuPanels.length; i++) {
+        if (allSubmenuPanels[i] !== ContentDivPanel) {
+          allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
+        }
+      }
+
+      allSubmenusButThis[i].classList.remove("submenu-opened");
       }
     ,500);
     vinculateArrows();
   }
 
 
-  for (var i = 0; i < allSubmenuPanels.length; i++) {
+  for (var i = 0; i < allSubmenuPanelsButThis.length; i++) {
 
-    allSubmenuPanels[i].classList.add("closed");
+    allSubmenuPanelsButThis[i].classList.add("closed");
     setTimeout(() => {
       let ContentDivPanel = document.getElementById(idContentDivPanel);
-      let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel)-ContentDivPanel;
-      allSubmenuPanels[i].classList.remove("submenu-panel-opened");
+      let allSubmenus = document.querySelectorAll(classQuerySubmenu);
+      let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
+      let allSubmenusButThis = [];
+      let allSubmenuPanelsButThis = [];
+    
+    
+      for (let i = 0; i < allSubmenus.length; i++) {
+        if (allSubmenus[i] !== submenu) {
+          allSubmenusButThis.push(allSubmenus[i]);
+        }
+      }
+    
+      for (let i = 0; i < allSubmenuPanels.length; i++) {
+        if (allSubmenuPanels[i] !== ContentDivPanel) {
+          allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
+        }
+      }      
+
+      allSubmenuPanelsButThis[i].classList.remove("submenu-panel-opened");
       }
     ,500);
     
