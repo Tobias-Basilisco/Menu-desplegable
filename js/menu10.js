@@ -92,7 +92,7 @@ arrows("menu-3","#menu-3-arrow");
 function arrows(idLi, idZonaDiv){
 
 let LiThatsHas = document.getElementById(idLi);
-alert(LiThatsHas);
+// alert(LiThatsHas);
 let zonaArrow = document.querySelector(idZonaDiv);
 
 if (window.innerWidth >= 1000) {
@@ -114,7 +114,7 @@ else {
 
 function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel){
 
-  alert("showSubmenu");
+  // alert("showSubmenu");
   let ContentDivPanel = document.getElementById(idContentDivPanel);
   // alert(ContentDivPanel);
   let submenu = ContentDivPanel.querySelector(classQuerySubmenu);
@@ -152,7 +152,7 @@ function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
 
   if (window.innerWidth >= 1000){
 
-  alert("full");
+  // alert("full");
   ContentDivPanel.classList.remove("closed");
   ContentDivPanel.classList.add("submenu-panel-opened");
   submenu.classList.remove("closed");
@@ -626,7 +626,7 @@ function vinculateArrows(){
         arrowAll[i].classList.add("frecce-closed");
       }
 
-      if (liElement[i].getElementsByTagName("div")[1].classList.contains("submenu-panel-opened")){
+      /* if (liElement[i].getElementsByTagName("div")[1].classList.contains("submenu-panel-opened")){
         
         arrowAll[i].classList.remove("frecce-closed");
         arrowAll[i].classList.add("frecce-opened");
@@ -637,7 +637,7 @@ function vinculateArrows(){
       else {
         liElement[i].classList.remove("no-hover");
 
-      }
+      } */
 
     }
   }
