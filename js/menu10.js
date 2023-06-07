@@ -63,7 +63,7 @@ function manage_menu(){
           ham.classList.remove("hide");
           },500);
           menu.classList.add("nav-closed");
-          hideMenuSubmenu();
+          hideSubmenu(".submenu",".submenu-panel");
           hideSubSubmenu();
           hideSubSubSubmenu();
           vinculateArrows();
@@ -87,9 +87,10 @@ function moveDivsToEndOfNav(){
 }
 
 // MOUSEOVER/CICK MENU ITEM
-arrows("menu-3","#menu-3-arrow");
+arrowsEventListener("menu-3","#menu-3-arrow","menu-3-content",".submenu",".submenu-panel");
 
-function arrows(idLi, idZonaDiv){
+
+function arrowsEventListener(idLi, idZonaDiv, idContentDivPanel, classQuerySubmenu, classQuerySubmenuPanel){
 
 let LiThatsHas = document.getElementById(idLi);
 // alert(LiThatsHas);
@@ -98,7 +99,7 @@ let zonaArrow = document.querySelector(idZonaDiv);
 if (window.innerWidth >= 1000) {
   // alert(evento);
   LiThatsHas.addEventListener(evento, function(event){
-    showSubmenu("menu-3-content",".submenu",".submenu-panel")
+    showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
   });
 
 
@@ -106,7 +107,7 @@ if (window.innerWidth >= 1000) {
 
 else {
   zonaArrow.addEventListener(evento, function(event){
-    showSubmenu("menu-3-content",".submenu",".submenu-panel")
+    showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
   });   
 }
 
@@ -137,19 +138,7 @@ function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
     }
   }
 
-
-
-
   
-
-
-  /* let menu3Content = document.getElementById("menu-3-content");
-  let submenu = menu3Content.querySelector(".submenu");
-  let allSubmenus = document.querySelectorAll(".submenu")-submenu;
-  let allSubmenuPanels = document.querySelectorAll(".submenu-panel")-menu3Content; */
-
-  
-
   if (window.innerWidth >= 1000){
 
   // alert("full");
@@ -267,15 +256,15 @@ function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
   
 
 
-function hideMenuSubmenu(){
+function hideSubmenu(classQuerySubmenu, classQuerySubmenuPanel){
 
-  let allSubmenus = document.querySelectorAll(".submenu");
-  let allSubmenuPanels = document.querySelectorAll(".submenu-panel");
+  let allSubmenus = document.querySelectorAll(classQuerySubmenu);
+  let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
 
   for (var i = 0; i < allSubmenus.length; i++) {
     allSubmenus[i].classList.add("closed");
     setTimeout(() => {
-      allSubmenus = document.querySelectorAll(".submenu");
+      allSubmenus = document.querySelectorAll(classQuerySubmenu);
       for (var i = 0; i < allSubmenus.length; i++) {
         allSubmenus[i].classList.remove("submenu-opened");
       }
@@ -285,7 +274,7 @@ function hideMenuSubmenu(){
   for (var i = 0; i < allSubmenuPanels.length; i++) {
     allSubmenuPanels[i].classList.add("closed");
     setTimeout(() => {
-      allSubmenuPanels = document.querySelectorAll(".submenu-panel");
+      allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
       for (var i = 0; i < allSubmenuPanels.length; i++) {
         allSubmenuPanels[i].classList.remove("submenu-panel-opened");
       }
