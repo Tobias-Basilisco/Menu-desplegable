@@ -626,15 +626,15 @@ function vinculateArrows(){
         arrowAll[i].classList.add("frecce-closed");
       }
 
-      /* if (liElement[i].getElementsByTagName("div")[1].classList.contains("submenu-panel-opened")){
+      if (liElement[i].getElementsByTagName("div")[1].classList.contains("submenu-panel-opened")){
         
         arrowAll[i].classList.remove("frecce-closed");
         arrowAll[i].classList.add("frecce-opened");
         //SENZA HOVER SE è APERTO IL SOTTOMENU
-        liElement[i].classList.add("no-hover");
+        // liElement[i].classList.add("no-hover");
       }
 
-      else {
+     /*  else {
         liElement[i].classList.remove("no-hover");
 
       } */
