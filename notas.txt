@@ -1,11 +1,5 @@
 
-funciones para hacer el js mas optimo
-
 version horizontal
 
 
 enricopruni.it
-
-??
-
-riga 111
