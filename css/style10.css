@@ -9,7 +9,10 @@
   
 }
 
-
+a{
+  text-decoration: none;
+  color: #333;
+}
   
   #hamburger {
     position: absolute;
