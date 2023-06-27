@@ -74,11 +74,17 @@ function manage_menu(){
 
 function moveDivsToEndOfNav(){
 
-  var subSubmenuPanel = document.querySelector('.sub-submenu-panel');
+
+  var subSubmenuPanel = document.querySelectorAll('.sub-submenu-panel');
   var nav = document.querySelector('nav');
-  var subSubSubmenuPanel = document.querySelector('.sub-sub-submenu-panel');
-  nav.appendChild(subSubmenuPanel);
-  nav.appendChild(subSubSubmenuPanel);
+  var subSubSubmenuPanel = document.querySelectorAll('.sub-sub-submenu-panel');
+  for (let i = 0; i < subSubmenuPanel.length; i++ ){
+    nav.appendChild(subSubmenuPanel[i]);
+  }
+  for (let i = 0; i < subSubSubmenuPanel.length; i++ ){
+    nav.appendChild(subSubSubmenuPanel[i]);
+  }
+
 }
 
 
@@ -90,10 +96,10 @@ arrowsEventListener("submenu-9","#submenu-9-arrow","submenu-9-content",".sub-sub
 
 //MOUSEOVER/CLICK SUB-SUBMENU ITEM
 arrowsEventListener("ssubmenu-3","#ssubmenu-3-arrow","ssubmenu-3-content",".sub-sub-submenu",".sub-sub-submenu-panel");
+arrowsEventListener("ssubmenu-3-2","#ssubmenu-3-2-arrow","ssubmenu-3-2-content",".sub-sub-submenu",".sub-sub-submenu-panel");
 
 
 function arrowsEventListener(idLi, idZonaDiv, idContentDivPanel, classQuerySubmenu, classQuerySubmenuPanel){
-
   let LiThatsHas = document.getElementById(idLi);
   let zonaArrow = document.querySelector(idZonaDiv);
 
@@ -179,63 +185,57 @@ function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
   
   for (var i = 0; i < allSubmenusButThis.length; i++) {
     allSubmenusButThis[i].classList.add("closed");
-    setTimeout(() => {
-      let ContentDivPanel = document.getElementById(idContentDivPanel);
-      let submenu = ContentDivPanel.getElementById(idSubmenu);
-      let allSubmenus = document.querySelectorAll(classQuerySubmenu);
-      let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
-      let allSubmenusButThis = [];
-      let allSubmenuPanelsButThis = [];
-    
-    
-      for (let i = 0; i < allSubmenus.length; i++) {
-        if (allSubmenus[i] !== submenu) {
-          allSubmenusButThis.push(allSubmenus[i]);
-        }
-      }
-    
-      for (let i = 0; i < allSubmenuPanels.length; i++) {
-        if (allSubmenuPanels[i] !== ContentDivPanel) {
-          allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
-        }
-      }
-
-      allSubmenusButThis[i].classList.remove("submenu-opened");
-      }
-    ,500);
     vinculateArrows();
   }
+  vinculateArrows();
+  setTimeout(() => {
+
+    let ContentDivPanel = document.getElementById(idContentDivPanel);
+    let submenu = ContentDivPanel.querySelector(classQuerySubmenu);
+    let allSubmenus = document.querySelectorAll(classQuerySubmenu);
+    let allSubmenusButThis = [];
+  
+    for (let i = 0; i < allSubmenus.length; i++) {
+      if (allSubmenus[i] !== submenu) {
+        allSubmenusButThis.push(allSubmenus[i]);
+      }
+    }
+    for (var i = 0; i < allSubmenusButThis.length; i++) {
+
+    allSubmenusButThis[i].classList.remove("submenu-opened");
+    vinculateArrows();
+    }
+  }
+  ,500);
+  vinculateArrows();
+  
 
 
   for (var i = 0; i < allSubmenuPanelsButThis.length; i++) {
 
     allSubmenuPanelsButThis[i].classList.add("closed");
-    setTimeout(() => {
-      let ContentDivPanel = document.getElementById(idContentDivPanel);
-      let allSubmenus = document.querySelectorAll(classQuerySubmenu);
-      let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
-      let allSubmenusButThis = [];
-      let allSubmenuPanelsButThis = [];
+    vinculateArrows();
+  }
+  setTimeout(() => {
+    let ContentDivPanel = document.getElementById(idContentDivPanel);
+    let allSubmenuPanels = document.querySelectorAll(classQuerySubmenuPanel);
+    let allSubmenuPanelsButThis = [];    
+  
     
-    
-      for (let i = 0; i < allSubmenus.length; i++) {
-        if (allSubmenus[i] !== submenu) {
-          allSubmenusButThis.push(allSubmenus[i]);
-        }
+  
+    for (let i = 0; i < allSubmenuPanels.length; i++) {
+      if (allSubmenuPanels[i] !== ContentDivPanel) {
+        allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
       }
-    
-      for (let i = 0; i < allSubmenuPanels.length; i++) {
-        if (allSubmenuPanels[i] !== ContentDivPanel) {
-          allSubmenuPanelsButThis.push(allSubmenuPanels[i]);
-        }
-      }      
+    }      
+    for (var i = 0; i < allSubmenuPanelsButThis.length; i++) {
 
       allSubmenuPanelsButThis[i].classList.remove("submenu-panel-opened");
-      }
-    ,500);
-    
-    vinculateArrows();
-  }   
+    }
+  }
+  ,500); 
+  vinculateArrows();
+vinculateArrows();   
 }
 
 function hideSubmenu(classQuerySubmenu, classQuerySubmenuPanel){
@@ -312,7 +312,7 @@ function asignMarginBotToAnimation(content){
     // let alturaPanel = 180;
     let alturaPanel = submenuPanelOpened.offsetHeight;
     // alert(-alturaPanel + "px");
-    document.documentElement.style.setProperty('--altura-panel', alturaPanel + "px");
+    document.documentElement.style.setProperty('--altura-panel', -alturaPanel + "px");
   }
   ,10)
 }
