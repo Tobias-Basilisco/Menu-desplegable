@@ -1,6 +1,4 @@
 
 version horizontal
 
-testear vertical entre 500 e 1024px
-
 enricopruni.it
