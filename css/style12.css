@@ -405,13 +405,7 @@ a{
       z-index: 20;
     }
 
-    /* li {
-      display: list-item;
-    } */
-
-    /* .submenu-panel-opened {
-      box-shadow: none;
-    } */
+    
     .frecce-zone-a {
       display: block;
       cursor: pointer;
