@@ -1,7 +1,9 @@
+let screanWidthBreakpoint = 1000;
+
 //MOBILE VS OTHER
 let evento='click';
 
-if (window.innerWidth >= 1000) {
+if (window.innerWidth >= screanWidthBreakpoint) {
   moveDivsToEndOfNav();
 
    //MOUSEOVER VS CLICK
@@ -103,7 +105,7 @@ function arrowsEventListener(idLi, idZonaDiv, idContentDivPanel, classQuerySubme
   let LiThatsHas = document.getElementById(idLi);
   let zonaArrow = document.querySelector(idZonaDiv);
 
-  if (window.innerWidth >= 1000) {
+  if (window.innerWidth >= screanWidthBreakpoint) {
     LiThatsHas.addEventListener(evento, function(event){
       showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
     });
@@ -139,7 +141,7 @@ function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
   }
 
   
-  if (window.innerWidth >= 1000){
+  if (window.innerWidth >= screanWidthBreakpoint){
 
   ContentDivPanel.classList.remove("closed");
   ContentDivPanel.classList.add("submenu-panel-opened");
@@ -148,7 +150,7 @@ function showSubmenu(idContentDivPanel,classQuerySubmenu,classQuerySubmenuPanel)
   }
 
   // versione mobile 
-  if (window.innerWidth < 1000){
+  if (window.innerWidth < screanWidthBreakpoint){
 
     // vinculateArrows();
 
@@ -316,6 +318,27 @@ function asignMarginBotToAnimation(content){
   }
   ,10)
 }
+
+//RESIZE = REFRESH
+
+resizeRefresh();
+
+function resizeRefresh(){
+  if (window.innerWidth < screanWidthBreakpoint){
+    window.addEventListener("resize", function() {
+      if (window.innerWidth > screanWidthBreakpoint) {
+        window.location.reload();
+      }
+    });
+  }else{
+    window.addEventListener("resize", function() {
+      if (window.innerWidth < screanWidthBreakpoint) {
+        window.location.reload();
+      }
+    });
+  }
+}
+
 
 
 
